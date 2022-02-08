@@ -1,0 +1,1 @@
+This is an example of a recipe of a program that is compiled via Makefile but the difference between makefile-example is that we do not use do_compile function, base.bbclass compiles the program using oe-runmake by default, any changes that we need about the compilation process can be done by EXTRA_OEMAKE variable in the recipe.

@@ -1,0 +1,411 @@
+    1  bitbake-layers show-layers
+    2  ls
+    3  cd ..
+    4  ls
+    5  cd build
+    6  ls
+    7  cd ..
+    8  cd layers
+    9  ls
+   10  cd ..
+   11  cd build
+   12  bitbake-layers create-layer ../layers/meta-mylayer/
+   13  bitbake-layers add-layer ../layers/meta-mylayer/
+   14  bitbake-layers show-layers
+   15  yocto-check-layer ../layers/meta-mylayer
+   16  yocto-check-layer ../layers/meta-mylayer/
+   17  ls
+   18  cd conf
+   19  ls
+   20  nano bblayers.conf
+   21  cd ..
+   22  ls
+   23  cd ..
+   24  cd layers
+   25  ls
+   26  cd meta-mylayer
+   27  ls
+   28  cd recipes-example
+   29  ls
+   30  cd example
+   31  ls
+   32  nano example_0.1.bb
+   33  cd ..
+   34  ls
+   35  mkdir images
+   36  nano lwl-image.bb
+   37  ls
+   38  mv lwl-image.bb images
+   39  ls
+   40  cd images
+   41  ls
+   42  cd ..
+   43  cd conf
+   44  ls
+   45  nano layer.conf
+   46  cd ..
+   47  cd .
+   48  cd ..
+   49  cd build
+   50  cd conf
+   51  nano loca.conf
+   52  nano local.conf
+   53  cd ..
+   54  cd layers
+   55  ls
+   56  cd meta-mylayer
+   57  ls
+   58  cd recipes example
+   59  cd recipes-example
+   60  ls
+   61  mkdir myhello
+   62  cd myhello
+   63  mkdir files
+   64  nano userprog.c
+   65  mv userprog.c files
+   66  cd files
+   67  ls
+   68  cd ..
+   69  nano myhello_0.1.bb
+   70  ls
+   71  cd ..
+   72  cd build
+   73  bitbake myhello
+   74  bitbake -e myhello | grep ^WORKDIR=
+   75  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/myhello/0.1-r0
+   76  ls
+   77  cd ..
+   78  cd -
+   79  cd
+   80  cd /yocto
+   81  ls
+   82  cd layers
+   83  ls
+   84  cd meta-mylayer
+   85  ls
+   86  cd recipes-example
+   87  ls
+   88  cd myhello
+   89  ls
+   90  nano myhello_0.1.bb
+   91  cd /yocto/build
+   92  bitbake myhello
+   93  cd ..
+   94  cd layers
+   95  ls
+   96  cd meta-mylayer
+   97  ls
+   98  cd recipes-example
+   99  ls
+  100  cd myhello
+  101  ls
+  102  cd files
+  103  ls
+  104  cd ..
+  105  ls
+  106  cd example
+  107  ls
+  108  cd ..
+  109  cd yocto/build
+  110  cd /yocto/build
+  111  bitbake example
+  112  bitbake -e example | grep ^WORKDIR=
+  113  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/example/0.1-r0
+  114  ls
+  115  cd temp
+  116  ls
+  117  cd /yocto/layers
+  118  ls
+  119  cd meta-mylayer
+  120  ls
+  121  cd images
+  122  ls
+  123  cd ..
+  124  cd recipes-example
+  125  ls
+  126  cd myhello
+  127  ls
+  128  nano myhello_0.1.bb
+  129  cd files
+  130  ls
+  131  nano userprog.c
+  132  cd /yocto/build
+  133  bitbake myhello
+  134  cd ..
+  135  cd /layers/meta-mylayer/recipes-example
+  136  cd /layers/meta-mylayer/
+  137  cd /layers
+  138  cd layers
+  139  ls
+  140  cd meta-mylayer
+  141  ls
+  142  cd recipes-example
+  143  ls
+  144  cd myhello
+  145  ls
+  146  nano myhello_0.1.bb
+  147  cd files
+  148  ls
+  149  cd /yocto/build
+  150  bitbake myhello
+  151  bitbake -e myhello | grep ^WORKDIR=
+  152  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/myhello/0.1-r0
+  153  ls
+  154  cd temp
+  155  ls
+  156  cd ..
+  157  ls
+  158  cd /yocto/build
+  159  bitbake myhello
+  160  bitbake -e myhello | grep ^WORKDIR=
+  161  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/myhello/0.1-r0
+  162  ls
+  163  cd /yocto/build
+  164  cd ..
+  165  cd layers
+  166  cd meta-mylayer
+  167  cd images
+  168  ls
+  169  nano lwl-image.bb
+  170  cd ..
+  171  ls
+  172  rm images
+  173  rm -rf images
+  174  ls
+  175  cd recipes-example
+  176  mkdir images
+  177  cd images
+  178  nano lwl-image-scratch.bb
+  179  nano lwl-image-extended.bb
+  180  cd /yocto/build
+  181  bitbake lwl-image-extended.bb
+  182  bitbake lwl-image-extended
+  183  bitbake myhello
+  184  bitbake -e myhello | grep ^WORKDIR=
+  185  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/myhello/0.1-r0
+  186  ls
+  187  cd sstate-install-package_write_ipk
+  188  ls
+  189  cd ..
+  190  cd deploy-ipks
+  191  ls
+  192  cd /yocto/build
+  193  cd /yocto-tmp/work
+  194  ls
+  195  cd x86_64-linux
+  196  ls
+  197  cd ..
+  198  find myhello
+  199  cd /yocto/layers
+  200  ls
+  201  rm -rf meta-mylayer
+  202  cd ..
+  203  cd build
+  204  ls
+  205  cd conf
+  206  ls
+  207  nano bblayer.conf
+  208  nano bblayers.conf
+  209  cd ..
+  210  bitbake-layers create-layer ../layers/meta-mylayer
+  211  bitbake-layers add-layer ../layers/meta-mylayer/
+  212  bitbake-layers show-layers
+  213  ls
+  214  cd ..
+  215  cd layers/meta-mylayer
+  216  ls
+  217  cd recipes-example
+  218  ls
+  219  mkdir images
+  220  nano lwl-image-scratch.bb
+  221  nano lwl-image-extended.bb
+  222  ls
+  223  mv lwl-image-extended.bb images
+  224  ls
+  225  mv lwl-image-scratch.bb images
+  226  ls
+  227  mkdir myhello
+  228  cd myhello
+  229  mkdir files
+  230  nano myhello_0.1.bb
+  231  cd files
+  232  nano userprog.c
+  233  cd ..
+  234  ls
+  235  cd ..
+  236  ls
+  237  cd ..
+  238  cd build
+  239  bitbake lwl-image-extended
+  240  bitbake -e myhello | grep ^WORKDIR=
+  241  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/myhello/0.1-r0
+  242  ls
+  243  ls temp
+  244  cd /yocto/build
+  245  runqemu lwl-image-extended
+  246  runqemu lwl-image-extended-colibri-imx6
+  247  git -h
+  248  cd ..
+  249  cd layers
+  250  cd meta-mylayer
+  251  ls
+  252  cd recipes-example
+  253  ls
+  254  rm -rf example
+  255  ls
+  256  mkdir multiple-c-files-example
+  257  cd multiple-c-files-example
+  258  mkdir files
+  259  nano multiple-c-files-example_0.1.bb
+  260  cd files
+  261  nano main.c
+  262  nano function.c
+  263  cd /yovto/build
+  264  cd /yocto/build
+  265  bitbake multiple-c-files-example
+  266  bitbake -e multiple-c-files-example | grep ^WORKDIR=
+  267  ls /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/multiple-c-files-example/0.1-r0
+  268  cd ../layers/meta-mylayer
+  269  ls
+  270  cd recipes-example
+  271  ls
+  272  cd images
+  273  ls
+  274  nano lwl-iamge-extended.bb
+  275  nano lwl-image-extended.bb
+  276  cd ..
+  277  history
+  278  history >> /yocto/layers/meta-mylayers/command-history.txt
+  279  history >> /yocto/layers/meta-mylayer/command-history.txt
+  280  cd ..
+  281  ls
+  282  nano command-history.txt
+  283  ls
+  284  cd recipes-example
+  285  ls
+  286  mkdir makefile-example
+  287  cd makefile-example
+  288  mkdir files
+  289  nano makefile-example_0.1.bb
+  290  cd files
+  291  nano Makefile
+  292  nano userprog.c
+  293  cd ..
+  294  ls
+  295  nano makefile-example_0.1.bb
+  296  cd /yocto/build
+  297  bitbake makefile-example
+  298  nano temp/run.do_compile
+  299  cd temp/
+  300  ls
+  301  cd /yocto-tmp
+  302  ls
+  303  cd workd
+  304  cd work
+  305  ls
+  306  cd ..
+  307  cd /yocto/build
+  308  bitbake -e makfile-example | grep ^WORKDIR= 
+  309  bitbake -e makefile-example | grep ^WORKDIR= 
+  310  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/makefile-example/0.1-r0
+  311  ls
+  312  nano temp/run.do_compile
+  313  cd /yocto/layers/meta-mylayer
+  314  cd recipes-example
+  315  ls
+  316  cd makefile-example
+  317  nano makefile-example_0.1.bb
+  318  cd /yocto/build
+  319  bitbake -c clean makefile-example
+  320  bitbake makefile-example
+  321  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/makefile-example/0.1-r0
+  322  nano temp/run.do_compile
+  323  cd yocto/build
+  324  cd /yocto/build
+  325  history > /yocto/layers/meta-mylayer/command-history.txt
+  326  cd ..
+  327  cd layers/meta-mylayer
+  328  nano command-history.txt
+  329  ls
+  330  cd ..
+  331  ls
+  332  cd meta-toradex-distro
+  333  ls
+  334  cd scripts
+  335  ls
+  336  cd ../..
+  337  cd meta
+  338  cd meta-yocto
+  339  ls
+  340  cd meta-poky
+  341  ls
+  342  cd classes
+  343  ls
+  344  cd ..
+  345  ls
+  346  cd openembedded-core
+  347  ls
+  348  cd meta
+  349  ls
+  350  cd classes
+  351  ls
+  352  nano base.bbclass
+  353  cd ../../
+  354  cd ..
+  355  cd meta-mylayer
+  356  cd makefile-example
+  357  cd ls
+  358  ls
+  359  cd recipes-example/makefile-example
+  360  ls
+  361  cd ..
+  362  mkdir makefile-example-2
+  363  cd makefile example-2
+  364  cd makefile-example-2
+  365  mkdir files
+  366  nano makefile-example-2_0.1.bb
+  367  cd files
+  368  nano Makefile
+  369  nano userprog.c
+  370  cd ..
+  371  cd ../../../../
+  372  cd build
+  373  bitbake makefile-example-2
+  374  cd ../layers/meta-mylayer/recipes-example/makefile-example-2
+  375  nano makefile-example-2_0.1.bb
+  376  cd ../../../../
+  377  cd build
+  378  bitbake makefile-example-2
+  379  bitbake makefile-example-2 -e | grep ^WORKDIR=
+  380  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/makefile-example-2/0.1-r0
+  381  ls
+  382  cd temp
+  383  nano run.do_compile
+  384  nano run.do_install
+  385  cd /yocto/layers/meta-mylayer/recipes-example/makefile-example-2
+  386  nano makefile-example-2_0.1.bb
+  387  cd ../../../build
+  388  cd ../../../..
+  389  cd build
+  390  bitbake makefile-example-2
+  391  cd /yocto/layers/meta-mylayer/recipes-example/makefile-example-2
+  392  nano makefile-example-2_0.1.bb
+  393  cd ../../../..
+  394  cd build
+  395  bitbake makefile-example-2
+  396  cd /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/makefile-example-2/0.1-r0
+  397  tree image
+  398  tree packages-split/
+  399  ls
+  400  cd temp
+  401  ls
+  402  cd ../../../..
+  403  cd build
+  404  cd /yocto/build
+  405  bitbake makefile-example-2 -e | grep ^D=
+  406  tree /yocto-tmp/work/armv7at2hf-neon-tdx-linux-gnueabi/makefile-example-2/0.1-r0/image
+  407  cd ../layers/meta-mylayer
+  408  ls
+  409  history
+  410  ls
+  411  history > command-history.txt
